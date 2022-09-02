@@ -25,13 +25,7 @@ export function TransactionTable() {
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Desenvolvimento de website </td>
-                        <td>12.000</td>
-                        <td>Desenvolvimento</td>
-                        <td>20/02/2021</td>
-                    </tr>
-                            
+                    
                     <tr>
                         <td>Desenvolvimento de website </td>
                         <td className="deposit">12.000</td>
@@ -52,6 +46,8 @@ export function TransactionTable() {
     );
 }
                        
+                  
+                            
 
                        
 
