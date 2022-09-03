@@ -21,23 +21,18 @@ export function NewTransactionModal({ isOpen,onRequestClose,}: NewTransactionMod
     const [title, setTitle] = useState('');
     const [value, setVelue] = useState(0);
     const [category, setCategory] = useState('');
- 
     const [type, setType] = useState('deposit');
-
+    
     function handleCreateNewTransaction(event:FormEvent) {
       event.preventDefault()
-
-
-     const data = {
-      title,
-        value,
-        category,
-        type,
-     };
-        
+      const data = {
+         title,
+         value,
+         category,
+         type,
+      };
       api.post('/transactions', data)
     }
-
     return (
       <Modal
        isOpen={isOpen}
@@ -45,17 +40,14 @@ export function NewTransactionModal({ isOpen,onRequestClose,}: NewTransactionMod
        overlayClassName="react-modal-overlay"
        className="react-modal-content"
        >  
-
        <button type="button"
         onClick={onRequestClose} 
         className='react-modal-close' 
         >
         <img src={closeImg} alt="Fexar modal" />
        </button> 
-
         <Container onSubmit={handleCreateNewTransaction}>
           <h2>Cadastar transação</h2>
-  
           <input 
           placeholder="Titulo" 
           value={title}
@@ -72,12 +64,10 @@ export function NewTransactionModal({ isOpen,onRequestClose,}: NewTransactionMod
             type="button"
             onClick={() => { setType('deposit')}}
             isActive={type === 'deposit'}
-
             activeColor="green"
             >
             <img src={incomeImg} alt="Entrada" />
-              <span>Entrada</span>
-
+            <span>Entrada</span>
             </RadioBox>
 
             <RadioBox
@@ -88,7 +78,6 @@ export function NewTransactionModal({ isOpen,onRequestClose,}: NewTransactionMod
             >
             <img src={outcomeImg} alt="Saida" />
               <span>Saida</span>
-
             </RadioBox>
           </TransactionTypeContainer>
   
@@ -103,6 +92,17 @@ export function NewTransactionModal({ isOpen,onRequestClose,}: NewTransactionMod
       </Modal>
     );
   }
+
+
+
+        
+
+
+
+  
+
+
+
   
        
        

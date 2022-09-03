@@ -8,7 +8,7 @@ import { App }from './App';
 createServer({
 
   models: {
-    transactions: Model,
+    transaction: Model,
   },
 
   seeds(server) {
@@ -20,7 +20,7 @@ createServer({
           type: 'deposit',
           category: 'Dev',
           amount: 6000,
-          createdAT: new Date('2021-02-12 09:00:00'),
+          createdAt: new Date('2021-02-12 09:00:00'),
         },
         {
           id: 2,
@@ -40,11 +40,11 @@ createServer({
   routes() {
     this.namespace = 'api';
 
-    this.get('/transaction', () => {  
-      return this.schema.all('transactions')
+    this.get('/transactions', () => {  
+      return this.schema.all('transaction')
     })
 
-    this.post('/transaction', (schema, request) => {
+    this.post('/transactions', (schema, request) => {
       const data = JSON.parse (request.requestBody)
 
       return schema.create('transaction', data)
